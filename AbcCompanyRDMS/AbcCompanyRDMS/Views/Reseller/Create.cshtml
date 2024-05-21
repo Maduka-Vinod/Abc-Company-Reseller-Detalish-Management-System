@@ -1,0 +1,59 @@
+﻿@model AbcCompanyRDMS.Models.Reseller
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Reseller</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="ResellerName" class="control-label"></label>
+                <input asp-for="ResellerName" class="form-control" />
+                <span asp-validation-for="ResellerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResellerAddress" class="control-label"></label>
+                <input asp-for="ResellerAddress" class="form-control" />
+                <span asp-validation-for="ResellerAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResellerEmail" class="control-label"></label>
+                <input asp-for="ResellerEmail" class="form-control" />
+                <span asp-validation-for="ResellerEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResellerPhone" class="control-label"></label>
+                <input asp-for="ResellerPhone" class="form-control" />
+                <span asp-validation-for="ResellerPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResellerContactPerson" class="control-label"></label>
+                <input asp-for="ResellerContactPerson" class="form-control" />
+                <span asp-validation-for="ResellerContactPerson" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ResellerContactPersonPhone" class="control-label"></label>
+                <input asp-for="ResellerContactPersonPhone" class="form-control" />
+                <span asp-validation-for="ResellerContactPersonPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<AbcCompanyRDMS.Models.Reseller>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Reseller Details</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="row">
+    <div class="col-6">
+        <form asp-action="Index" method="get">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="SearchString" placeholder="Search by Reseller Name" value="@ViewData["CurrentFilter"]" />
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ResellerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResellerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResellerAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResellerEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResellerPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResellerContactPerson)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResellerContactPersonPhone)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ResellerId)
+                </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ResellerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResellerAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResellerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResellerPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResellerContactPerson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResellerContactPersonPhone)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.ResellerId">Edit</a>
+                <a class="btn btn-danger" asp-action="Delete"  asp-route-id="@item.ResellerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
